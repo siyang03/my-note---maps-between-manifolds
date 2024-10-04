@@ -71,6 +71,10 @@
 \begin{document}
 	\maketitle
 	
+	Email: \href{mailto:wansiyang03@gmail.com}{\texttt{wansiyang03@gmail.com}}
+	
+	\url{https://github.com/siyang03/my-note---maps-between-manifolds}
+	
 	\tableofcontents
 	
 	\section{a map between two manifolds}
@@ -195,6 +199,53 @@
 	
 	\subsection{left-invariant vector field on the Poincaré group}
 	\begin{itemize}
-		\item 
+		\item Poincaré 群的具体性质见笔记 \href{https://github.com/siyang03/my-note---Lie-Groups-and-Lie-Algebras}{Lie Groups and Lie Algebras}.
+		
+		\item 在 Poincaré 群的单位元的邻域上建立坐标,
+		\begin{equation}
+			x : (\Lambda(\omega), a) \mapsto \{\omega, a\}
+		\end{equation}
+		定义映射 $L_{(\Lambda(\omega_0), a_0)} : \mathrm{P} \rightarrow \mathrm{P}$, 使得,
+		\begin{equation}
+			(\Lambda(\omega), a) \mapsto (\Lambda(\omega_0), a_0) (\Lambda(\omega), a)
+		\end{equation}
+		
+		\item 为了方便, 令 $\phi = L_{(\Lambda(\omega_0), a_0)}$, 以及 $g = (\Lambda(\omega), a), h = \phi(g)$.
+		
+		\item 定义新坐标 $x'$, (有 $\phi^* x' = x$),
+		\begin{equation}
+			x' : h \mapsto x(g) \quad \text{i.e.} \quad \begin{dcases}
+				x(h) = \{\omega_h, a_h\} \\
+				x'(h) = \{\omega_g, a_g\}
+			\end{dcases}
+		\end{equation}
+		其中,
+		\begin{equation} \label{2.12}
+			(\Lambda(\omega_h), a_h) = (\Lambda(\omega_0), a_0) (\Lambda(\omega_g), a_g) \Longrightarrow \begin{dcases}
+				\Lambda(\omega_h) = \Lambda(\omega_0) \Lambda(\omega_g) \\
+				a_h = a_0 + \Lambda(\omega_0) a_g
+			\end{dcases}
+		\end{equation}
+		
+		\item 因此, 对于推前映射,
+		\begin{equation}
+			\begin{dcases}
+				\phi_* \frac{\partial}{\partial a} = \frac{\partial}{\partial a'} = \tensor{\Lambda(\omega_0)}{^\nu_\mu} \frac{\partial}{\partial a^\nu} \\
+				\phi_* \frac{\partial}{\partial \omega_{\mu \nu}} = \frac{\partial}{\partial \omega'_{\mu \nu}} = \mathcolor{red}{(?)}
+			\end{dcases}
+		\end{equation}
+		
+		\begin{tcolorbox}[title=calculation:]
+			用 \eqref{2.12} 中给出的关系 (做替换 $x_g \mapsto x', x_h \mapsto x$), 所以,
+			\begin{equation}
+				\begin{dcases}
+					\Lambda(\omega) = \Lambda(\omega_0) \Lambda(\omega') \\
+					a = a_0 + \Lambda(\omega_0) a'
+				\end{dcases} \Longrightarrow \begin{dcases}
+					\frac{\partial a^\nu}{\partial a'^\mu} = \tensor{\Lambda(\omega_0)}{^\nu_\mu} \\
+					\frac{\partial \omega_{\mu \nu}}{\partial \omega'_{\mu \nu}} = \mathcolor{red}{(?)}
+				\end{dcases}
+			\end{equation}
+		\end{tcolorbox}
 	\end{itemize}
 \end{document}
